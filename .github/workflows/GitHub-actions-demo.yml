@@ -2,7 +2,7 @@ name: hello-world
 on: push
 jobs:
   my-job:
-    runs-on: ams-ssaha2-ub1
+    runs-on: self-hosted
     steps:
       - name: my-step
         run: echo "Hello World!"
