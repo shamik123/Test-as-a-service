@@ -1,17 +1,15 @@
-name: GitHub Actions Example
-on: [push]		
 jobs:
-  Explore-GitHub-Actions:
-  runs-on: ubuntu-latest
-  steps:
-        run: echo " The job was automatically triggered by a ${{Github.event_name }} event."
-        run: echo " This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-        run: echo " The name of your branch is ${{ GitHub.ref }} and your repository is ${{ GitHub.repository }}."
-        name: Check out repository code
-        user: actions/checkout@v3
-        run: echo " The ${{ GitHub.repository }} repository has been cloned to the runner." 
-        run: echo " The workflow is now ready to test your code on the runner."
-        name: List files in the repository
+  build_addon_software:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Install Jq tool
         run: |
-           Is ${{ GitHub.workspace }}
-        run: echo " This job's status is ${{ job.status }}."
+          sudo apt-get update
+          sudo apt-get install jq
+
+      - uses: actions/setup-node@v3 (If the software is available as an action, use this)
+        with:
+          node-version: '14'
