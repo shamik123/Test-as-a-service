@@ -1,15 +1,8 @@
+name: hello-world
+on: push
 jobs:
-  build_addon_software:
+  my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
-
-      - name: Install Jq tool
-        run: |
-          sudo apt-get update
-          sudo apt-get install jq
-
-      - uses: actions/setup-node@v3 (If the software is available as an action, use this)
-        with:
-          node-version: '14'
+      - name: my-step
+        run: echo "Hello World!"
