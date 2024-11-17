@@ -5,4 +5,5 @@ jobs:
     runs-on: ams-ssaha2-ub1
     steps:
       - name: my-step
-        run: echo "Hello World!"
+        run: echo "Hello World"
+        
