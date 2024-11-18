@@ -7,7 +7,7 @@ jobs:
       - name: my-step
         run: echo "Hello World!!"
       - name: list
-        run: echo $ls
+        run: echo $(ls)
       - name: install-studio-cli
         run: INST_URL=https://distro.windriver.com/dist/wrstudio/wrstudio-cli-distro-cd/install-studio-cli.sh && curl -f $INST_URL --output inst.sh && bash inst.sh -u $INST_URL -y
       - name: version-check
